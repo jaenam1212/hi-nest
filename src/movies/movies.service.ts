@@ -11,14 +11,21 @@ export class MoviesService {
         return this.movies;
     }
 
+    // getOne(id: number): Movie {
+    //     const movie = this.movies.find(movie => movie.id === id);
+    //     console.log(typeof movie.id)
+    //     if (!movie) {
+    //         throw new NotFoundException(`Movie with ID ${id} not found.`);
+    //     }
+    //     return movie;
+    // }
     getOne(id: number): Movie {
         const movie = this.movies.find(movie => movie.id === id);
-        console.log(typeof movie.id)
         if (!movie) {
-            throw new NotFoundException(`Movie with ID ${id} not found.`);
+          throw new NotFoundException(`Movie with ID ${id} not found.`);
         }
         return movie;
-    }
+      }
 
     deleteOne(id: number) {
         this.getOne(id);
